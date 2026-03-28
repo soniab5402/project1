@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlixStream - Home</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(84, 13, 13, 0.6), rgb(77, 16, 16));
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .box {
+            background-color: #111;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            color: red;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 25px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 40px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+
+        a {
+            color: cyan;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>FlixStream</h1>
+        <p>Welcome, {{ user }}!</p>
+
+        <form action="/recommend" method="POST">
+            <select name="genre" required style="width: 90%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: none;">
+                <option value="">Select a genre</option>
+                {% for genre in genres %}
+                <option value="{{ genre }}">{{ genre }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit">Recommend</button>
+        </form>
+
+        <a href="/logout">Logout</a>
+    </div>
+
+</body>
+</html>

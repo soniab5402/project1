@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlixStream - Sign In</title>
+
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(rgba(84, 13, 13, 0.6), rgb(77, 16, 16));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        /* Checkbox styling */
+.checkbox-container {
+    display: flex;
+    align-items: center;       
+    justify-content: center;  
+    gap: 8px;                 
+    margin-top: 10px;          
+    margin-bottom: 15px;       
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 18px;               
+    height: 18px;
+}
+
+.checkbox-container label {
+    font-size: 14px;           
+}
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>FlixStream</h1>
+        <h3>Sign In</h3>
+
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email or phone number" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <a href="#">Forgot Password?</a><br><br>
+            <p>New to FlixStream? <a href="/signup_page">Sign up now</a></p>
+        </form>
+
+    
+    </div>
+</body>
+</html>
